@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div{
+    width: 200px;
+    height: 100px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+div>p{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+div>p>span{
+    width: 50%;
+    height: 100px;
+    display: inline-block;
+    text-align: center;
+ line-height: 100px;
+}
+ div>p>span:nth-of-type(1){
+    background-color:#000000;
+}
+div>p>span:nth-of-type(2){
+    background-color: crimson;
+} 
+div>p>span:nth-of-type(1)::before{
+    content: attr(data-Elecode);
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: crimson;
+    transform: rotateX(90deg) translateY(-50%);
+    transform-origin: top;
+    overflow: hidden;
+    transition: 1000ms;
+    color: whitesmoke;
+
+}
+
+div:hover>p>span:nth-of-type(1)::before{
+    transform: rotateX(0deg) translateY(0%);
+
+}
+div>p>span:nth-of-type(2)::after{
+    content: attr(data-IranZamin);
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #000000;
+    transform: rotateX(90deg) translateY(50%);
+    transform-origin: bottom;
+    overflow: hidden;
+    transition: 1000ms;
+    color: whitesmoke;
+
+}
+div:hover>p>span:nth-of-type(2)::after{
+    transform: rotateX(0deg) translateY(0%);
+
+}
